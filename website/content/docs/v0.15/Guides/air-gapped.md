@@ -65,7 +65,7 @@ We are going to replace the first component of the image name (before the first 
 
 ```bash
 $ for image in `talosctl images`; do \
-    docker tag $image `echo $image | sed -E 's#^[^/]+/#127.0.0.1:6000/#'` \
+    docker tag $image `echo $image | sed -E 's#^[^/]+/#127.0.0.1:6000/#'`; \
   done
 ```
 
@@ -73,7 +73,7 @@ As the next step, we push images to the internal registry:
 
 ```bash
 $ for image in `talosctl images`; do \
-    docker push `echo $image | sed -E 's#^[^/]+/#127.0.0.1:6000/#'` \
+    docker push `echo $image | sed -E 's#^[^/]+/#127.0.0.1:6000/#'`; \
   done
 ```
 
